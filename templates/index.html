@@ -53,7 +53,7 @@
         return xmlHttp.responseText;
     }
     window.setInterval(function() {
-      a = window.httpGet("http://127.0.0.1:5000/notification");
+      a = window.httpGet("/notification");
       if (a != "None") {
         notifyPage(a);
       } else {
