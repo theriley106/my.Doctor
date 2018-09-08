@@ -40,15 +40,3 @@ function renderControls(title, buttons) {
 
    document.getElementById('map').appendChild(containerNode);
 }
-
-renderControls('Change floor', {
-   '+1 Level': function() {
-      //Change to floor above
-      venueProvider.setCurrentLevel(venueProvider.getCurrentLevel() + 1);
-      document.getElementById('title').innerText = 'Level: ' + venueProvider.getCurrentLevel()
-   },
-   '-1 Level': function() {
-      venueProvider.setCurrentLevel(venueProvider.getCurrentLevel() - 1);
-      document.getElementById('title').innerText = 'Level: ' + venueProvider.getCurrentLevel()
-   }
-});
