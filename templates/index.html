@@ -19,11 +19,32 @@
     <script type="text/javascript" src='js/app.js'></script>
        <link rel="stylesheet" href="{{ url_for('static',filename='css/notifications.css') }}">
           <script src="{{ url_for('static',filename='js/notifications.js') }}"></script>
-          <script>
-            setTimeout(function() {window.createNotification({})({
-        title: 'Title',
-        message: 'Notification Message'
-      });}, 3000);
-      </script>
+      <script>
+
+      function notifyPage(messageVal) {
+        window.createNotification({})({
+          title: 'Title',
+          message: messageVal
+        });
+      }
+
+  function httpGet(theUrl)
+    // The network request grabs the json containing mp3 structure
+    {
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+        xmlHttp.send( null );
+        return xmlHttp.responseText;
+    }
+
+    window.setInterval(function() {
+      a = window.httpGet("http://127.0.0.1:5000/notification");
+      if (a != "None") {
+        notifyPage(a);
+      } else {
+      console.log("http" + a);
+    }
+  }, 2000);
+</script>
   </body>
 </html>
