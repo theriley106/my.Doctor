@@ -1,49 +1,40 @@
+
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
-    <meta name="description" content="Display venue objects (e.g. shops, airports etc) on the map">
-    <title>Adding Venues layer to the Map</title>
-    <link rel="stylesheet" type="text/css" href="https://js.api.here.com/v3/3.0/mapsjs-ui.css" />
-    <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-core.js"></script>
-    <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-service.js"></script>
-    <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-ui.js"></script>
-    <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-mapevents.js"></script>
-  </head>
-  <body>
-    <h1>Adding Venues layer to the Map</h1>
-    <p>This example shows how to display different venue objects on the map like shops, restaurants, parkings, taxi stands etc and how to customize default styling for them.<br><br>Use the controls to change the floor level of the venues.<br></p>
-    <div id="map" style="position: absolute; top: 0; left: 0;width: 100%; height: 100%; background: grey"></div>
-    <script type="text/javascript" src="{{ url_for('static',filename='js/app.js') }}"></script>
-       <link rel="stylesheet" href="{{ url_for('static',filename='css/notifications.css') }}">
-          <script src="{{ url_for('static',filename='js/notifications.js') }}"></script>
-      <script>
-
-      function notifyPage(messageVal) {
-        window.createNotification({})({
-          title: 'Title',
-          message: messageVal
-        });
+<head>
+   <title>HERE Venue Maps</title>
+   <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+   <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-core.js"></script>
+   <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-service.js"></script>
+   <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-ui.js"></script>
+   <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-mapevents.js"></script>
+   <link rel="stylesheet" type="text/css" href="https://js.api.here.com/v3/3.0/mapsjs-ui.css">
+   <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300" rel="stylesheet">
+   <style>
+      body {
+         font-family: 'Fira Sans', sans-serif;
+         color: #333;
       }
+      #map {
+         position: absolute;
+         top: 0;
+         bottom: 0;
+         width: 100%;
+      }
+      #containerNode {
+         position: absolute;
+         top: 0;
+         left: 0;
+         background-color: #fff;
+         padding: 10px;
+         text-align: center
+      }
+   </style>
+</head>
 
-  function httpGet(theUrl)
-    // The network request grabs the json containing mp3 structure
-    {
-        var xmlHttp = new XMLHttpRequest();
-        xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
-        xmlHttp.send( null );
-        return xmlHttp.responseText;
-    }
+<body>
+   <div id="map"></div>
+   <script type="text/javascript" src="{{ url_for('static',filename='js/here.js') }}"></script>
+</body>
 
-    window.setInterval(function() {
-      a = window.httpGet("http://127.0.0.1:5000/notification");
-      if (a != "None") {
-        notifyPage(a);
-      } else {
-      console.log("http" + a);
-    }
-  }, 1000);
-</script>
-  </body>
 </html>
