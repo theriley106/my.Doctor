@@ -40,3 +40,22 @@ function renderControls(title, buttons) {
 
    document.getElementById('map').appendChild(containerNode);
 }
+
+function addMarker(longitude, latitude, room){
+      var svgMarkup = '<svg width="24" height="24" ' +
+        'xmlns="http://www.w3.org/2000/svg">' +
+        '<rect stroke="white" fill="#1b468d" x="1" y="1" width="28" ' +
+        'height="28" /><text x="12" y="18" font-size="8pt" ' +
+        'font-family="Arial" font-weight="bold" text-anchor="middle" ' +
+        'fill="white">' + room + '</text></svg>';
+      var icon = new window.H.map.Icon(svgMarkup),
+        coords = {lat: longitude, lng: latitude},
+        marker = new window.H.map.Marker(coords, {icon: icon});
+
+      // Add the marker to the map and center the map at the location of the marker:
+      window.map.addObject(marker);
+      window.map.setCenter(coords);
+      console.log('done');
+    }
+
+window.addMarker(39.2966,-76.5927, '22');
