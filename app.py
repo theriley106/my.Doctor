@@ -10,5 +10,9 @@ APP_CODE = SECRETS[1]
 def index():
 	return render_template("index.html", appid=APP_ID, appcode=APP_CODE)
 
+@app.route('/test', methods=['GET'])
+def index2():
+	return render_template("index2.html", appid=APP_ID, appcode=APP_CODE)
+
 if __name__ == '__main__':
 	app.run(host='127.0.0.1', port=5000)

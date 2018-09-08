@@ -54,8 +54,8 @@ function onSpaceCreated(space) {
 
 // Step 1: initialize communication with the platform
 var platform = new H.service.Platform({
-  app_id: "{{ appid }}",
-  app_code: "{{ appcode }}",
+  app_id: "Jujo8ybVlqbfcm4jKhgb",
+  app_code: "0WvWO6Gn60_9a1qeLvwNAg",
   useCIT: true,
   useHTTPS: true
 });
