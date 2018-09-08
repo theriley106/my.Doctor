@@ -42,18 +42,18 @@ function renderControls(title, buttons) {
 }
 
 function randomLongLat(){
-	one = [39.2966,-76.5927]
-	two = [39.2964,-76.5927]
-	three = [39.2966,-76.5923]
-	four = [39.2966,-76.5918]
-	five = [39.2976,-76.5918]
-	six = [39.2980,-76.5928]
-	items = [one, two, three, four, five, six]
-	return items[Math.floor(Math.random()*items.length)]
+  one = [39.2966,-76.5927]
+  two = [39.2964,-76.5927]
+  three = [39.2966,-76.5923]
+  four = [39.2966,-76.5918]
+  five = [39.2976,-76.5918]
+  six = [39.2980,-76.5928]
+  items = [one, two, three, four, five, six]
+  return items[Math.floor(Math.random()*items.length)]
 }
 
 function addMarker(room){
-		var c = window.randomLongLat();
+    var c = window.randomLongLat();
       var svgMarkup = '<svg width="24" height="24" ' +
         'xmlns="http://www.w3.org/2000/svg">' +
         '<rect stroke="white" fill="#1b468d" x="1" y="1" width="28" ' +
@@ -69,9 +69,3 @@ function addMarker(room){
       window.map.setCenter(coords);
       console.log('done');
     }
-
-
-//window.addMarker(39.2966,-76.5927, '22');
-
-window.addMarker('22');
-
