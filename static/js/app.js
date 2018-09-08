@@ -64,7 +64,7 @@ var defaultLayers = platform.createDefaultLayers();
 // Step 2: initialize a map
 var map = new H.Map(document.getElementById('map'), defaultLayers.normal.map, {
   // initial center and zoom level of the map
-  center: new H.geo.Point(52.5189, 13.4158),
+  center: new H.geo.Point(39.2967, -76.5927),
   zoom: 17
 });
 
