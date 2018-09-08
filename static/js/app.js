@@ -64,9 +64,11 @@ var defaultLayers = platform.createDefaultLayers();
 // Step 2: initialize a map
 var map = new H.Map(document.getElementById('map'), defaultLayers.normal.map, {
   // initial center and zoom level of the map
-  center: new H.geo.Point(39.2967, -76.5927),
+  center: new H.geo.Point(42.11437, -75.8805),
   zoom: 17
 });
+
+
 
 // Step 3: make the map interactive
 // MapEvents enables the event system

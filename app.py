@@ -27,6 +27,10 @@ def index():
 def index2():
 	return render_template("index2.html", appid=APP_ID, appcode=APP_CODE)
 
+@app.route('/test3', methods=['GET'])
+def index3():
+	return render_template("new.html", appid=APP_ID, appcode=APP_CODE)
+
 
 @app.route('/notification', methods=['GET', 'POST'])
 def check_notifications():
@@ -48,4 +52,4 @@ def check_notifications():
 
 
 if __name__ == '__main__':
-	app.run(host='127.0.0.1', port=5000, debug=True)
+	app.run(host='0.0.0.0', port=5000, debug=True, threaded=True)
