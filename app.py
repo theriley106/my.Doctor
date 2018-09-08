@@ -2,9 +2,7 @@ from flask import Flask, render_template, request, url_for, redirect, Markup, js
 
 app = Flask(__name__, static_url_path='/static')
 
-SECRETS = open("secrets.txt").read().split("\n")
-APP_ID = SECRETS[0]
-APP_CODE = SECRETS[1]
+
 INFO = {}
 INFO['status'] = False
 INFO['message'] = None
@@ -21,15 +19,15 @@ def update_status(message):
 
 @app.route('/', methods=['GET'])
 def index():
-	return render_template("index.html", appid=APP_ID, appcode=APP_CODE)
+	return render_template("index.html")
 
 @app.route('/test', methods=['GET'])
 def index2():
-	return render_template("index2.html", appid=APP_ID, appcode=APP_CODE)
+	return render_template("index2.html")
 
 @app.route('/test3', methods=['GET'])
 def index3():
-	return render_template("new.html", appid=APP_ID, appcode=APP_CODE)
+	return render_template("new.html")
 
 
 @app.route('/notification', methods=['GET', 'POST'])
