@@ -55,6 +55,7 @@
     window.setInterval(function() {
       a = window.httpGet("/notification");
       if (a != "None") {
+        addMarker('22');
         notifyPage(a);
       } else {
       console.log("http" + a);
