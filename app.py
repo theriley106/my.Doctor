@@ -30,7 +30,6 @@ def index2():
 
 @app.route('/notification', methods=['GET', 'POST'])
 def check_notifications():
-	print("NOTIFICATIONS")
 	if request.method == 'POST':
 		# It's a post request
 		message = request.values.get("message")
