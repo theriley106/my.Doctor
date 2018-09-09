@@ -66,6 +66,5 @@ function addMarker(room){
 
       // Add the marker to the map and center the map at the location of the marker:
       window.map.addObject(marker);
-      window.map.setCenter(coords);
       console.log('done');
     }
