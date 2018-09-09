@@ -21,15 +21,6 @@ def update_status(message):
 def index():
 	return render_template("index.html")
 
-@app.route('/test', methods=['GET'])
-def index2():
-	return render_template("index2.html")
-
-@app.route('/test3', methods=['GET'])
-def index3():
-	return render_template("new.html")
-
-
 @app.route('/notification', methods=['GET', 'POST'])
 def check_notifications():
 	if request.method == 'POST':
@@ -41,9 +32,8 @@ def check_notifications():
 	else:
 		# It's a get request
 		if INFO['status'] == True:
-			a = get_message()
-			print a
-			return a
+			# This means there is a new update
+			return get_message()
 		else:
 			# This means there is not an update
 			return "None"
