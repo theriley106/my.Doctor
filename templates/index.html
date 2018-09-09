@@ -40,8 +40,8 @@
       <script>
       function notifyPage(messageVal) {
         window.createNotification({})({
-          title: 'Title',
-          message: messageVal
+          title: 'Judith Jones',
+          message: "Requested Dr. Stevens in Room 22A"
         });
       }
   function httpGet(theUrl)
@@ -55,7 +55,7 @@
     window.setInterval(function() {
       a = window.httpGet("/notification");
       if (a != "None") {
-        addMarker('22');
+        addMarker('22A');
         notifyPage(a);
       } else {
       console.log("http" + a);
