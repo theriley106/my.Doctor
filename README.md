@@ -1,17 +1,18 @@
 # my.Doctor
 Voice powered patient management/tracking system with symptom prioritization | Project for MedHacks at Johns Hopkins University in September 2018
 
-## Targeted Audience
-
-my.Doctor is targetted towards elderly patients staying in *long-term* care at Johns Hopkins Hospital.
+<h3><i>my.Doctor is targetted towards elderly patients staying in *long-term* care at Johns Hopkins Hospital.</i></h3>
 
 <p align="center">
   <img src="static/4.png"/>
 </p>
 
 
+<p align="center">
+  <img src="static/5.png"/>
+</p>
 
 
 <p align="center">
-  <img src="static/3.png"/>
+  <img src="static/7.png"/>
 </p>
